@@ -1,0 +1,266 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+		<script>
+		/*1.lungimea unui sir*/
+		function lungimeSir(){
+			var arr="ana are mere";
+			var x = arr.length;
+			return x;			
+		}
+		console.log("lungimea sirului - ana are mere este ", lungimeSir());
+		
+		/*2.returneaza max*/
+		var arr = [5, 7, -2];
+		function maxArray(max){
+			var max = arr[0];
+			for (var i=0; i < arr.length; i++) {
+				if (arr[i] > max) {max = arr[i];
+				return max;}
+			}
+								}
+		console.log("max dintre 5,7,-2 este : ",maxArray());
+		
+		/*3.returneaza min*/
+		var arr = [5, 7, -2];
+		function minArray(min){
+			var min = arr[0];
+			for (var i=0; i < arr.length; i++) {
+				if (arr[i] < min) {min = arr[i];
+				return min;}
+			}
+								}
+		console.log("min dintre 5,7,-2 este : ",minArray());
+		
+		/*4.alt sir de caractere care contine doar cifrele din sir*/
+		
+		var sir = "abc234char5678#!9";
+		function nr(num){
+			if(sir === num) return "nu sunt cifre";
+			var num="";
+			for(var i=0; i<sir.length; i++){
+				if (sir[i]>="0" && sir[i]<="9"){ 
+									num+=sir[i];
+									continue;
+									
+									}
+				                           }
+				return num;
+						}
+		console.log("sirul abc234char5678#!9, format doar din cifre este - ", nr()); 
+		
+		/*5.sir cu literele a-f	*/
+		function litere(){ 
+		var sir2 = "af123ssdabkpqcce";
+		var subsir="";
+			for(var i=0; i<sir2.length; i++){
+				if (sir2[i]>="a" && sir2[i]<="f"){ 
+									subsir+=sir2[i];
+									continue;									
+									}
+				                           }
+						return subsir;
+						}	
+		console.log("sirul *af123ssdabkpqcce* care afiseaza doar literele a-f  - ", litere());
+		
+		/*6.primele 5 litere din sir*/
+		function cinci(sir3){
+		var sir3 = "abc123steu";
+		var l5=""; 
+		for(var i=0; i<sir3.length; i++){
+				if (sir3[i]>="a" && sir3[i]<="z"){
+					l5+=sir3[i];
+					continue;}
+				}
+		if(l5.length<=4){return "nu sunt destule litere";}
+			else{return l5.substring(0,5);}
+			}
+		console.log("sirul abc123steu, afiseaza primele 5 litere din sir ca  - ", cinci());
+
+		/*7.ultimele 10 litere*/
+		function zece(sir4){
+		var sir4 = "da278fjsgtwuyg";
+		var l10=""; 
+		for(var i=0; i<sir4.length; i++){
+				if (sir4[i]>="a" && sir4[i]<="z"){
+					l10+=sir4[i];
+					continue;}
+				}
+		if(l10.length<=4){return "nu sunt destule litere";}
+			else{return l10.slice(-10);}
+			}
+		console.log("sirul da278fjsgtwuyg, afiseaza ultimele 10 litere ca  - ", zece());
+		
+		/*8.prima pozitie a unui caracter dintr-un sir*/
+		
+		function pozC(s, c){
+			var s="asdrfspfjdhrt";
+			var c="r";
+			var poz= "";
+			for(var i=0; i<s.length; i++){
+				if(s[i] == c){poz=s.indexOf(c);}
+				}return poz;
+				}
+			console.log("din sirul asdrfspfjdhrt, R apare prima data pe pozitia ", pozC());
+
+		/*9.ultima pozitie a unui caracter dintr-un sir*/
+		function pozC_ultim(s, c){
+			var s="asdrfspfjdhrt";
+			var c="r";
+			var poz= "";
+			for(var i=0; i<s.length; i++){
+				if(s[i] == c){poz=s.lastIndexOf(c);}
+				}return poz;
+				}
+			console.log("din sirul asdrfspfjdhrt, R apare ultima data pe pozitia ", pozC_ultim());
+			
+		/*10.lista de siruri si returneaza siruri concatenate*/
+		function sir_conc(a){
+			var a=["ana", "are", "mere", "verzi"];
+			var result="";
+			for(var i=0; i<=(a.length-1); i++){
+				result+=a[i];				
+			}
+			return result;
+		}
+		console.log(sir_conc());
+		
+		/*11.lista de siruri si returneaza siruri concatenate despartite prin :*/
+		
+		function sir_separator(x){
+			var x=["ana", "are", "mere", "verzi"];
+			var val=[];
+			var y = ":";
+			for(var i=0; i<=(x.length)-1; i++){
+				val.push(x[i]+y);
+									}
+				return val.toString().replace(/,/g , " ");
+			} 
+	 
+		console.log(sir_separator());
+
+		/*12. factorialul unui numar*/
+		function factorial(n){
+		var arr=[];
+		if (n == 0 || n == 1) return 1;
+		if (arr[n] > 0) return f[n];
+		return arr[n] = factorial(n-1)*n;
+		        }
+		console.log("factorialul lui 5 este :", factorial(5));
+
+		/*13.cmmdc*/
+		function cmmd(a, b){
+			if (a == 0) return b;
+			while(b != 0){ 
+			 if(a>b) a = a-b;
+	                 else b= b-a;
+			}
+                   return a;
+		}
+		console.log("cmmd(15,115) este: ",cmmd(15,115));
+
+		/*14.cmmmc*/
+		function cmmmc(a,b){
+			var p = a*b;
+			return p /cmmd(a,b);
+		}
+		console.log("cmmmc(15, 115) este: ",cmmmc(15, 115));
+
+		/* 15.toti divizorii unui numar*/
+		function divizor(x){
+			var div = [];
+			for(var i=2; i<= x/2; i++){
+				if(x%i===0) {
+					if(isPrim(x) && x>i && x%i===0)
+					{ x=x/i; div.push(i);}
+					div.push(i);
+				}
+											}
+		
+				return div;}
+			
+			console.log(divizor(64));
+	
+		/* 16.divizorii primi a unui numar*/
+		function isPrim(x){
+			for(var i=2; i<=x/2; i++){
+				if(x%i===0){return false;}
+			}
+			return true;}
+		function divizorPrim(x){
+			var div = [];
+			for(var i=2; i<= x/2; i++){
+				if(x%i==0) {
+					while(isPrim(i) && x>=i && x%i===0)
+					{ x=x/i; div.push(i);}
+				}
+											}
+		
+				return div;}
+			
+			console.log(divizorPrim(64));
+
+		/*17. divizorii unici primi*/
+			
+		function divizorUnic(x){
+			var div = [];
+			for(var i=2; i<= x/2; i++){
+				if(x%i==0) {
+					while(isPrim(i) && x>=i && x%i===0)
+					{ x=x/i;}
+				           } 
+				div.push(i);
+									}
+		
+				return div;}
+			
+			console.log(divizorUnic(64));
+
+		/*18. un array din 2 arrayuri*/
+		function conc(a, b){
+			var div=[];
+			var a=[1,2,3,4,5];
+			var b=[6,7,8,9];
+	     for(var i=0; i<a.length; i++)
+			{div.push(a[i]);}
+	     for(var i=0; i<b.length; i++)
+			{div.push(b[i]);}
+			return div;
+		}
+		console.log(conc());
+
+		/*19.un string in ordinea inversa ABC-CBA*/
+		function oglindit(){
+			var x="ABC";
+			var y="";
+			for(var i=x.length - 1; i>=0;i--){
+				y+=x[i];
+
+			}
+					return y;
+		}
+		console.log(oglindit());
+
+		/*20. palindrom*/
+		function palindrom(){
+			var x="cojoc";
+			var y="";
+			var n=x.length;
+			for(var i=0; i<n/2; i++){
+				if(((x[i]>="a" && x[i]<="z") ||(x[i]>="0" && x[i]<="9")) && (x[i] !== x[(n-1)-i]))
+					{return false;}
+					return true;
+				}
+		}
+		console.log(palindrom());
+		</script>
+    </head>
+    <body>
+	</body>
+</html>
